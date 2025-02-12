@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Resume Genie - AI-Powered Resume & Cover Letter Builder 🚀  
 
-First, run the development server:
+Resume Genie is an intelligent web application designed to help job seekers create optimized resumes and personalized cover letters tailored to specific job descriptions. Using advanced AI algorithms, Resume Genie enhances your ATS (Applicant Tracking System) score by strategically incorporating the right keywords, ensuring your application stands out.  
 
+---
+
+## 🌟 Features  
+- **AI-Generated Resumes & Cover Letters:** Tailored content to perfectly match job descriptions.  
+- **Editable Sections:** Easily modify the generated resume and cover letter as needed.  
+- **Job Tracker:** Automatically tracks job applications with relevant company details.  
+- **Custom Fonts & Design:** Uses Vidaloka, Geist Sans, and Geist Mono for a modern and professional look.  
+- **SEO-Optimized Layout:** Ensures a responsive and user-friendly interface.  
+
+---
+
+## 🚀 Getting Started  
+
+### Prerequisites  
+- Node.js (version 18.x or later)  
+- npm or yarn package manager  
+
+### Installation  
+Clone the repository and install the dependencies:  
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/your-username/resume-genie.git
+cd resume-genie
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Running the Application  
+To start the development server, run:  
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📂 Project Structure  
+```plaintext
+src
+│   ├── app
+│   │   └── layout.tsx         // Main layout with global styles and custom fonts
+│   │   └── page.tsx           // Main page rendering logic
+│   ├── components             // Reusable UI components
+│   ├── lib
+│   │   └── fonts.ts           // Font configuration for Vidaloka, Geist Sans, and Geist Mono
+│   └── styles
+│       └── globals.css        // Global CSS styles
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 SEO Optimization  
+The `layout.tsx` file includes SEO-friendly metadata:  
+```tsx
+export const metadata: Metadata = {
+  title: "Resume Genie - AI-Powered Resume & Cover Letter Builder",
+  description: "Create optimized resumes and cover letters tailored to job descriptions using AI. Enhance your ATS score and track job applications seamlessly.",
+};
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## ✨ Technologies Used  
+- **Next.js** – For server-side rendering and routing.  
+- **TypeScript** – Ensures type safety and maintainable code.  
+- **Tailwind CSS** – Rapid and modern styling.  
+- **Custom Fonts** – Vidaloka, Geist Sans, Geist Mono for unique typography.  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📌 Upcoming Features  
+- 🔥 Keyword Suggestion Tool for enhanced ATS optimization.  
+- 📊 Analytics Dashboard to track application performance.  
+- 🌍 Multi-language support for international job seekers.  
+
+---
+
+## 💻 Contributing  
+Contributions are welcome! Please follow these steps:  
+1. Fork the repository.  
+2. Create a new feature branch (`feature/your-feature-name`).  
+3. Commit your changes.  
+4. Push to the branch.  
+5. Create a pull request.  
+
+---
+
+## 🛡️ License  
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.  
+
+---
+
+## 📞 Contact  
+For questions or collaboration inquiries, reach out at:  
+**Your Name** – [your.email@example.com](mailto:your.email@example.com)  
+**GitHub** – [https://github.com/your-username](https://github.com/your-username)  
+
+---
+
+## 🌟 Acknowledgements  
+Special thanks to the contributors and open-source libraries that made this project possible!  
+
+---
+
+## ⭐ Support  
+If you find this project useful, please consider giving it a star ⭐ on GitHub!  

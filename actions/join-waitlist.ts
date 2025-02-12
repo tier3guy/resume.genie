@@ -3,9 +3,9 @@ import { prisma } from "@/lib/db";
 import { IActionResult } from "@/types/action-result.type";
 
 export async function AddWaitLister(name: string, email: string): Promise<IActionResult> {
-    if(!name || !email) return {
+    if (!name || !email) return {
         status: false,
-        message: "Please fill in all fields",
+        message: "⚠️ Please fill all the necessary fields",
         data: null
     };
 
@@ -14,9 +14,9 @@ export async function AddWaitLister(name: string, email: string): Promise<IActio
             email: email
         }
     });
-    if(ifAlreadyExits) return {
+    if (ifAlreadyExits) return {
         status: false,
-        message: "You are already on the waitlist",
+        message: "🚫 You are already on the waitlist",
         data: null
     };
 
@@ -30,14 +30,15 @@ export async function AddWaitLister(name: string, email: string): Promise<IActio
 
         return {
             status: true,
-            message: "You have been added to the waitlist",
+            message: "You have been added to the waitlist 🎉",
             data: newWaitLister
         };
     } catch (error) {
         return {
             status: false,
-            message: "Internal Server Error. Please try again after sometime",
+            message: "❌ Internal Server Error. Please try again after sometime",
             data: error
         };
     }
+
 }

@@ -4,20 +4,21 @@ import { cn } from "@/lib/utils";
 import { vidaloka } from "@/lib/fonts";
 import { Input } from "@/components/ui/input";
 import { AddWaitLister } from "@/actions/join-waitlist";
+import { IActionResult } from "@/types/action-result.type";
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
 import { AvatarCircles, fakeAvatars } from "@/components/magicui/avatar-circles";
 
 export default function JoinWaitlistForm() {
-    const [, setMsg] = useState("");
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
+    const [resp, setResp] = useState<IActionResult | null>(null);
     const [loading, setLoading] = useState(false);
 
     const onJoinHandler = async () => {
         setLoading(true);
         const resp = await AddWaitLister(name, email);
-        if(resp){
-            setMsg(resp.message);
+        if(resp) {
+            setResp(resp);
             setLoading(false);
         }
     }
@@ -36,6 +37,7 @@ export default function JoinWaitlistForm() {
                     <Input placeholder="Tell us your name..." value={name} onChange={(e) => setName(e.target.value)}/>
                     <Input placeholder="Enter your email address..." value={email} onChange={(e) => setEmail(e.target.value)}/>
                 </div>
+                {resp && <ResponseMessageComponent message={resp?.message} responseType={resp?.status} />}
                 <ShimmerButton className="bg-slate-700 flex items-center gap-2 py-2" onClick={onJoinHandler} loading={loading}>
                     <p className={cn(vidaloka.className, "px-4")}>Join the Waitlist</p>
                 </ShimmerButton>
@@ -45,4 +47,15 @@ export default function JoinWaitlistForm() {
             </div>
         </div>
     );
+}
+
+export interface ResponseMessageComponentProps{
+    message: string;
+    responseType: boolean; //  TRUE :POSITIVE
+                           // FALSE :NEGATIVE
+}
+export function ResponseMessageComponent(props: ResponseMessageComponentProps){
+    return (
+        <p className={cn("mb-2", props.responseType ? "text-green-600" : "text-red-600")}>{props.message}</p>
+    )
 }

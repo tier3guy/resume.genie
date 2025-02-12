@@ -83,10 +83,12 @@ export default {
   		}
   	}
   },
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [centerUtility, require("tailwindcss-animate")],
 } satisfies Config;
 
-function centerUtility({ addUtilities }){
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function centerUtility({ addUtilities }: any){
     addUtilities({
       ".center": {
         position: "absolute",

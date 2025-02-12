@@ -6,11 +6,11 @@ export default function Home() {
     return (
         <div className="bg-slate-50 h-screen overflow-hidden flex flex-col w-full">
             <Navbar />
-            <div className="flex-1 flex gap-5 overflow-y-auto">
-                <div className="w-1/2">
+            <div className="flex-1 flex flex-col md:flex-row gap-5 overflow-y-auto">
+                <div className="w-full md:w-1/2">
                     <JoinWaitlistCard />
                 </div>
-                <div className="w-1/2">
+                <div className="w-full md:w-1/2">
                     <JoinWaitlistForm />
                 </div>
             </div>

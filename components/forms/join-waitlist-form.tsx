@@ -25,7 +25,7 @@ export default function JoinWaitlistForm() {
 
     return (
         <div className="w-full h-full grid place-content-center bg-white">
-            <div className="w-[55%] flex items-center justify-center flex-col m-auto">
+            <div className="pt-10 md:pt-0 w-[80%] md:w-[55%] flex items-center justify-center flex-col m-auto">
                 <div className="text-center">
                     <h1 className={`text-4xl font-bold text-slate-700 ${vidaloka.className}`}>Join our journey to get early access</h1>
                     <p className="text-slate-500 mt-4">Join our extensive waitlist today to spark connection and get notified when we launch 🎉</p>

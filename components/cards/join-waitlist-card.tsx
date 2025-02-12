@@ -3,7 +3,7 @@ import { vidaloka } from "@/lib/fonts";
 export default function JoinWaitlistCard() {
     return (
         <div className="h-full w-full bg-white grid place-content-center">
-            <div className="w-[70%] h-[80%] flex flex-col m-auto overflow-y-auto pe-5">
+            <div className="w-[90%] md:w-[70%] md:h-[80%] flex flex-col m-auto overflow-y-auto pt-10 md:pt-0 pe-5">
                 <div className="">
                     <h1 className={`text-4xl font-bold text-slate-700 ${vidaloka.className}`}>Craft the Perfect Job Application in Minutes with AI ✨</h1>
                     <p className={`text-slate-500 mt-6`}>ResumeGenie is your AI-powered career assistant designed to revolutionize how you apply for jobs. Upload your current resume, input the job description, and let our intelligent system generate a professionally optimized resume and personalized cover letter tailored for the role.</p>
@@ -21,7 +21,7 @@ export default function JoinWaitlistCard() {
                     <h3 className={`text-2xl text-slate-700 ${vidaloka.className}`}>Be Among the First 🚧</h3>
                     <p className="mt-4 text-slate-500">{"We’re hard at work creating an innovative tool that will redefine your job application experience. Joining the waitlist ensures you'll be the first to access TailorCV when it launches."}</p>
                 </div>
-                <div className="mt-10">
+                <div className="mt-10 mb-10 md:mb-0">
                     <h3 className={`text-2xl text-slate-700 ${vidaloka.className}`}>Early Access Benefits 🔥</h3>
                     <ul className="text-slate-500 mt-4 flex flex-col gap-2">
                         <li>1. Exclusive early access features.</li>

@@ -27,7 +27,7 @@ export default function PrivacyPolicy() {
                             <li>To provide, personalize, and improve our services.</li>
                             <li>To communicate with you about updates, promotions, and service-related information.</li>
                             <li>To process your requests and provide support.</li>
-                            <li>To analyze usage patterns and improve the website's functionality.</li>
+                            <li>{"To analyze usage patterns and improve the website's functionality."}</li>
                             <li>To ensure security and prevent fraudulent activity.</li>
                         </ul>
                     </div>
@@ -57,7 +57,7 @@ export default function PrivacyPolicy() {
                     </div>
 
                     <div className="mt-10">
-                        <h2 className={`text-2xl text-slate-700 ${vidaloka.className}`}>6. Children's Privacy 🚸</h2>
+                        <h2 className={`text-2xl text-slate-700 ${vidaloka.className}`}>{"6. Children's Privacy 🚸"}</h2>
                         <p className="text-slate-500 mt-4">Our services are not intended for individuals under the age of 13. We do not knowingly collect information from children.</p>
                     </div>
 

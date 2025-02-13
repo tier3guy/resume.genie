@@ -1,9 +1,9 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { vidaloka } from "@/lib/fonts";
 import { Input } from "@/components/ui/input";
-import { AddWaitLister } from "@/actions/join-waitlist";
 import { IActionResult } from "@/types/action-result.type";
 import { ShimmerButton } from "@/components/magicui/shimmer-button";
 import { AvatarCircles, fakeAvatars } from "@/components/magicui/avatar-circles";
@@ -16,12 +16,27 @@ export default function JoinWaitlistForm() {
 
     const onJoinHandler = async () => {
         setLoading(true);
-        const resp = await AddWaitLister(name, email);
-        if(resp) {
-            setResp(resp);
-            setLoading(false);
+        try {
+            const response = await fetch("/api/join-waitlist", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ name, email })
+            });
+
+            const data = await response.json();
+            setResp(data);
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        } catch (error) {
+            setResp({
+                status: false,
+                message: "❌ Something went wrong. Please try again later.",
+                data: null
+            });
         }
-    }
+        setLoading(false);
+    };
 
     return (
         <div className="w-full h-full grid place-content-center bg-white">
@@ -42,7 +57,7 @@ export default function JoinWaitlistForm() {
                     <p className={cn(vidaloka.className, "px-4")}>Join the Waitlist</p>
                 </ShimmerButton>
                 <div className="w-full my-4 border-t py-4">
-                    <p className="text-center text-slate-400">{`By clicking "Join the Waitlist you agree to our"`} <span className="font-semibold text-slate-500">Privacy Policy</span> and <span className="font-semibold text-slate-500">Terms of Use</span>.</p>
+                    <p className="text-center text-slate-400">{`By clicking "Join the Waitlist you agree to our"`} <Link href={"/privacy-policy"} className="font-semibold text-slate-500">Privacy Policy</Link> and <Link href={"/terms-of-use"}  className="font-semibold text-slate-500">Terms of Use</Link>.</p>
                 </div>
             </div>
         </div>

@@ -24,11 +24,12 @@ export default function JoinWaitlistForm() {
                 },
                 body: JSON.stringify({ name, email })
             });
-
+            console.log(response);
             const data = await response.json();
+            console.log(data);
             setResp(data);
         } catch (error) {
-            console.log(error);
+            console.error(error);
             setResp({
                 status: false,
                 message: "❌ Something went wrong. Please try again later.",
